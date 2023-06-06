@@ -3,11 +3,13 @@ function playRound() {
   var playerSelection = prompt("Rock? Paper? Scissors? Make Your Choice", "Make Your Choice: ");
 
   var computerSelection = Math.floor(Math.random() * 3);
-  
+
   if (playerSelection != null) {
-        return playerSelection;
+    return playerSelection;
+  }
+
+  console.log(playRound("You chose " + playerSelection + " and the computer chose " + computerSelection));
+
 }
 
-console.log(playRound("You chose " + playerSelection + " and the computer chose " + computerSelection));
-  
-}
+playRound();

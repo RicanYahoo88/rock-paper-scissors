@@ -10,10 +10,6 @@ function playRound() {
 
   console.log("You chose " + playerSelection + " and the computer chose " + computerSelection);
 
-
-
-
-
 }
 
 playRound();

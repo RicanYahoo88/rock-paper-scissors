@@ -1,6 +1,8 @@
 
 const gameRPS = () => {
 
+  playRound();
+
   let round = 0;
   let playerScore = 0;
   let computerScore = 0;
@@ -13,23 +15,27 @@ const gameRPS = () => {
     const computersNumber = Math.floor(Math.random() * 3);
     const computersChoice = computerOptions[computersNumber];
 
+    console.log(computersChoice);
     return computersChoice;
   }
 
 
   //start round
-  function playRound() {
+  function playRound() { 
 
+    
     const rockBtn = document.querySelector('.rock');
     const paperBtn = document.querySelector('.paper');
     const scissorsBtn = document.querySelector('.scissors');
 
     //get both choices
     let playerSelection = [rockBtn, paperBtn, scissorsBtn];
-    let computerSelection = getComputerChoice();
+    
 
     playerSelection.forEach(selection => {
       selection.addEventListener('click', function () {
+        539555
+        let computerSelection = getComputerChoice();
 
         const roundsLeft = document.querySelector('.rounds-left');
         round++;
@@ -47,6 +53,54 @@ const gameRPS = () => {
 
   const winner = (playerSelection, computerSelection) => {
 
+    const result = document.querySelector('.result');
+    const playerRoundsWon = document.querySelector('.player-rounds-won');
+    const computerRoundsWon = document.querySelector('.computer-rounds-won');
+    playerSelection = playerSelection.toLowerCase();
+    computerSelection = computerSelection.toLowerCase();
+
+    if (playerSelection === computerSelection) {
+      result.textContent = `Its a tie! You chose ${playerSelection} Computers choice was ${computerSelection} Try again. Round ${round}`
+    }
+    else if (playerSelection == 'rock') {
+      if (computerSelection == 'paper') {
+        result.textContent = 'Computer Won';
+        computerScore++;
+        computerRoundsWon.textContent = computerScore;
+      }
+      else {
+        result.textContent = 'Player Won';
+        playerScore++;
+        playerRoundsWon.textContent = playerScore;
+      }
+    }
+    else if (playerSelection == 'scissors') {
+      if (computerSelection == 'rock') {
+        result.textContent = 'Computer Won';
+        computerScore++;
+        computerRoundsWon.textContent = computerScore;
+      }
+      else {
+        result.textContent = 'Player Won';
+        playerScore++;
+        playerRoundsWon.textContent = playerScore;
+      }
+    }
+    else if (playerSelection == 'paper') {
+      if (computerSelection == 'scissors') {
+        result.textContent = 'Computer Won';
+        computerScore++;
+        computerRoundsWon.textContent = computerScore;
+      }
+      else {
+        result.textContent = 'Player Won';
+        playerScore++;
+        playerRoundsWon.textContent = playerScore;
+      }
+    }
+  }
+
+  const gameOver = (playerSelection,roundsLeft) => {
     const result = document.querySelector('.result');
     const playerRoundsWon = document.querySelector('.player-rounds-won');
     const computerRoundsWon = document.querySelector('.computer-rounds-won');
@@ -93,9 +147,7 @@ const gameRPS = () => {
       }
     }
   }
-  playRound();
-}
 
-
+  }
 gameRPS();
 

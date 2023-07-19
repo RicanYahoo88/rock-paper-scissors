@@ -1,0 +1,78 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-image:url(./Assets/RockPaperScissor-2880x1620_Lede.jpg);
+    background-size: cover;
+    color: #fff;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    position: absolute;
+    top: 0;
+    font-size: 4rem;
+    z-index: 2;
+}
+
+.score {
+    display: flex;
+    width: 30vw;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 70px;
+    z-index: 1;
+}
+
+.player-rounds-won,
+.computer-rounds-won {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.options {
+    display: flex;
+    width: 50vw;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+}
+
+.rock,
+.paper,
+.scissors {
+    color: #000;
+    padding: 0.8rem;
+    width: 100px;
+    border-radius: 10px;
+    background: rgb(255, 255, 255);
+    outline: none;
+    border-color: rgb(255, 253, 253);
+    border: none;
+    cursor: pointer;
+}
+
+.move {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.reload {
+    display: none;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgb(255, 0, 0);
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+  

@@ -21,16 +21,16 @@ const gameRPS = () => {
 
 
   //start round
-  function playRound() { 
+  function playRound() {
 
-    
+
     const rockBtn = document.querySelector('.rock');
     const paperBtn = document.querySelector('.paper');
     const scissorsBtn = document.querySelector('.scissors');
 
     //get both choices
     let playerSelection = [rockBtn, paperBtn, scissorsBtn];
-    
+
 
     playerSelection.forEach(selection => {
       selection.addEventListener('click', function () {
@@ -100,54 +100,41 @@ const gameRPS = () => {
     }
   }
 
-  const gameOver = (playerSelection,roundsLeft) => {
+  const gameOver = (playerSelection, roundsLeft) => {
+    const chooseMove = document.querySelector('.move');
     const result = document.querySelector('.result');
-    const playerRoundsWon = document.querySelector('.player-rounds-won');
-    const computerRoundsWon = document.querySelector('.computer-rounds-won');
-    playerSelection = playerSelection.toLowerCase();
-    computerSelection = computerSelection.toLowerCase();
+    const reloadBtn = document.querySelector('.reload');
 
-    if (playerSelection === computerSelection) {
-      result.textContent = `Its a tie! You chose ${playerSelection} Computers choice was ${computerSelection} Try again. Round ${round}`
-    }
-    else if (player == 'rock') {
-      if (computer == 'paper') {
-        result.textContent = 'Computer Won';
-        computerScore++;
-        computerRoundsWon.textContent = computerScore;
-      }
-      else {
-        result.textContent = 'Player Won';
-        playerScore++;
-        playerRoundsWon.textContent = playerScore;
-      }
-    }
-    else if (player == 'scissors') {
-      if (computer == 'rock') {
-        result.textContent = 'Computer Won';
-        computerScore++;
-        computerRoundsWon.textContent = computerScore;
-      }
-      else {
-        result.textContent = 'Player Won';
-        playerScore++;
-        playerRoundsWon.textContent = playerScore;
-      }
-    }
-    else if (player == 'paper') {
-      if (computer == 'scissors') {
-        result.textContent = 'Computer Won';
-        computerScore++;
-        computerRoundsWon.textContent = computerScore;
-      }
-      else {
-        result.textContent = 'Player Won';
-        playerScore++;
-        playerRoundsWon.textContent = playerScore;
-      }
-    }
-  }
+    playerSelection.forEach(selection => {
+      selection.style.display = 'none';
+    })
 
+
+    chooseMove.innerText = 'Game Over!!'
+    roundsLeft.style.display = 'none';
+
+    if (playerScore > computerScore) {
+      result.style.fontSize = '2rem';
+      result.innerText = 'You Won The Game'
+      result.style.color = '#308D46';
+    }
+    else if (playerScore < computerScore) {
+      result.style.fontSize = '2rem';
+      result.innerText = 'You Lost The Game';
+      result.style.color = 'red';
+    }
+    else {
+      result.style.fontSize = '2rem';
+      result.innerText = 'Tie';
+      result.style.color = 'grey'
+    }
+    reloadBtn.innerText = 'Restart';
+    reloadBtn.style.display = 'flex'
+    reloadBtn.addEventListener('click', () => {
+      window.location.reload();
+    })
   }
+}
+
 gameRPS();
 

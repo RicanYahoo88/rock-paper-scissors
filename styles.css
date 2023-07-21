@@ -2,12 +2,14 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-image:url(./Assets/RockPaperScissor-2880x1620_Lede.jpg);
+    background-image: url(./Assets/pxfuel.jpg);
     background-size: cover;
-    color: #fff;
+    background-position: 50% 50%;
+    color: #6200ff;
 }
 
 .game {
+    background: transparent;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -17,6 +19,7 @@
 }
 
 .title {
+    background: black;
     position: absolute;
     top: 0;
     font-size: 4rem;
@@ -24,6 +27,7 @@
 }
 
 .score {
+    background: transparent;
     display: flex;
     width: 30vw;
     justify-content: space-evenly;
@@ -32,18 +36,31 @@
     z-index: 1;
 }
 
+div.playerScore,
+div.computerScore,
+h2 {
+    background: transparent;
+
+}
+
 .player-rounds-won,
 .computer-rounds-won {
+    background: transparent;
     text-align: center;
     font-size: 1.5rem;
     margin-top: 1rem;
 }
 
 .options {
+    background: transparent;
     display: flex;
     width: 50vw;
-    justify-content: space-evenly;
+    justify-content: space-around;
     margin-top: 2rem;
+}
+
+.selection {
+    background: transparent;
 }
 
 .rock,
@@ -61,18 +78,46 @@
 }
 
 .move {
+    background: transparent;
     font-size: 2rem;
     font-weight: bold;
 }
 
 .reload {
+    color: #6200ff;
+    background: rgb(255, 255, 255);
+    border-color: rgb(255, 253, 253);
     display: none;
     margin-top: 2rem;
     padding: 1rem;
-    background: rgb(255, 0, 0);
     outline: none;
     border: none;
     border-radius: 10px;
     cursor: pointer;
 }
-  
+
+.rounds-left {
+    background: transparent;
+
+}
+
+.result{
+    background: transparent;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 612px)
+{  
+    .title{
+        text-align: center;
+    }
+    .score{
+        position: absolute;
+        top: 200px;
+        width: 100vw;
+    }
+    .options{
+        width: 100vw;
+    }
+}

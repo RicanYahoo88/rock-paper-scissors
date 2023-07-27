@@ -1,13 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-    <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Rock Paper Scissors
-  </title>
-  <link href="styles.css" rel="stylesheet" type="text/css" />
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <title>Rock Paper or Scissors</title>
 </head>
-  <body>
-  <p>Be sure to enable the "developer" tools! (It's the wrench icon in replit)</p>
-  <script src="app.js"></script>
+
+<body>
+  <section class="game">
+    <!--Title -->
+    <div class="title">Rock Paper or Scissors</div>
+
+    <!--Display Score of player and computer -->
+    <div class="score">
+      <div class="playerScore">
+        <h2>Player Score</h2>
+        <p class="player-rounds-won">0</p>
+      </div>
+      <div class="computerScore">
+        <h2>Computer Score</h2>
+        <p class="computer-rounds-won">0</p>
+
+      </div>
+    </div>
+
+    <div class="move">Choose your move</div>
+
+    <!--Number of rounds left before game ends -->
+    <div class="rounds-left">Rounds Left: 10 </div>
+
+    <!--Options available to player to play game -->
+    <div class="selection">
+      <button class="rock" type="button">
+        Rock
+      </button>
+      <button class="paper" type="button">
+        Paper
+      </button>
+      <button class="scissors" type="button">
+        Scissors
+      </button>
+    </div>
+
+    <!--Final result of game -->
+    <div class="result"></div>
+
+    <!--Reload the game -->
+    <button class="reload">
+    </button>
+
+  </section>
+  <link rel="stylesheet" href="common/bootstrap/css/bootstrap.css" />
+  <script src="./app.js" async="false"></script>
 </body>
+
 </html>
